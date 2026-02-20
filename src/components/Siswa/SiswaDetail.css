@@ -84,8 +84,9 @@
 /* Foto Section */
 .foto-section {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
 .foto-wrapper {
@@ -121,6 +122,30 @@
 .status-badge.inactive {
   background-color: #f44336;
   color: white;
+}
+
+.delete-siswa-btn {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.delete-siswa-btn:hover {
+  background-color: #d32f2f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.delete-siswa-btn:active {
+  transform: scale(0.98);
 }
 
 /* Info Section */

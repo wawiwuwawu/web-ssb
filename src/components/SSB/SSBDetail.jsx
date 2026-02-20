@@ -52,6 +52,16 @@ function SSBDetail() {
     navigate('/dashboard');
   };
 
+  const getPositionIcon = (position) => {
+    const icons = {
+      'Kiper': '🥅',
+      'Bek': '🛡️',
+      'Gelandang': '⚙️',
+      'Penyerang': '⚽'
+    };
+    return icons[position] || '⚽';
+  };
+
   if (loading) {
     return (
       <div className="ssb-detail-container">
@@ -163,9 +173,21 @@ function SSBDetail() {
                     className="siswa-item clickable"
                     onClick={() => navigate(`/ssb/${id}/siswa/${siswa.id}`)}
                   >
+                    <div className="siswa-foto-wrapper">
+                      <img src={siswa.foto} alt={siswa.name} className="siswa-foto" />
+                      <div className={`siswa-status-badge ${siswa.isActive ? 'active' : 'inactive'}`}>
+                        {siswa.isActive ? '✓' : '✗'}
+                      </div>
+                    </div>
                     <div className="siswa-info">
                       <span className="siswa-name">{siswa.name}</span>
-                      <span className="siswa-detail">{siswa.email}</span>
+                      <div className="siswa-meta">
+                        <span className="siswa-age">{siswa.age} tahun</span>
+                        <span className="siswa-position">
+                          <span className="position-icon-small">{getPositionIcon(siswa.position)}</span>
+                          {siswa.position}
+                        </span>
+                      </div>
                     </div>
                     <span className="view-arrow">→</span>
                   </div>

@@ -88,6 +88,41 @@ function SiswaDetail() {
     }
   };
 
+  const handleDelete = async () => {
+    const confirmDelete = window.confirm(
+      `Apakah Anda yakin ingin menghapus siswa ${siswa.name}? Tindakan ini tidak dapat dibatalkan.`
+    );
+
+    if (!confirmDelete) return;
+
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        navigate('/');
+        return;
+      }
+
+      const response = await fetch(`${API_BASE_URL}/ssb/${ssbId}/siswa/${siswaId}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Navigate back to SSB detail page after successful delete
+        navigate(`/ssb/${ssbId}/detail`);
+      } else {
+        setError(data.message || 'Gagal menghapus siswa');
+      }
+    } catch (err) {
+      setError('Gagal terhubung ke server');
+    }
+  };
+
   const getPositionIcon = (position) => {
     const icons = {
       'Kiper': '🥅',
@@ -137,6 +172,9 @@ function SiswaDetail() {
                 {siswa.isActive ? '✓ Aktif' : '✗ Tidak Aktif'}
               </div>
             </div>
+            <button onClick={handleDelete} className="delete-siswa-btn">
+              🗑️ Hapus Siswa
+            </button>
           </div>
 
           {/* Info Siswa */}
