@@ -145,7 +145,12 @@ function SSBDetail() {
 
           {/* Daftar Siswa */}
           <div className="detail-card full-width">
-            <h3>Daftar Siswa</h3>
+            <div className="siswa-header">
+              <h3>Daftar Siswa</h3>
+              <button onClick={() => navigate(`/ssb/${id}/siswa/create`)} className="add-siswa-btn">
+                + Tambah Siswa
+              </button>
+            </div>
             {ssb.siswa.length === 0 ? (
               <div className="empty-siswa">
                 <p>Belum ada siswa terdaftar di SSB ini</p>
@@ -153,11 +158,16 @@ function SSBDetail() {
             ) : (
               <div className="siswa-list">
                 {ssb.siswa.map((siswa, index) => (
-                  <div key={index} className="siswa-item">
+                  <div 
+                    key={index} 
+                    className="siswa-item clickable"
+                    onClick={() => navigate(`/ssb/${id}/siswa/${siswa.id}`)}
+                  >
                     <div className="siswa-info">
                       <span className="siswa-name">{siswa.name}</span>
                       <span className="siswa-detail">{siswa.email}</span>
                     </div>
+                    <span className="view-arrow">→</span>
                   </div>
                 ))}
               </div>

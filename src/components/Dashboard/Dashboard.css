@@ -27,8 +27,20 @@
 
 .user-badge {
   display: flex;
-  gap: 12px;
-  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  background-color: #fafafa;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-badge:hover {
+  background-color: #f5f5f5;
+  border-color: #1a1a1a;
 }
 
 .user-name {
@@ -38,11 +50,11 @@
 }
 
 .user-role {
-  font-size: 13px;
+  font-size: 12px;
   color: #ffffff;
   background-color: #1a1a1a;
-  padding: 4px 12px;
-  border-radius: 12px;
+  padding: 2px 10px;
+  border-radius: 10px;
   font-weight: 500;
 }
 

@@ -71,6 +71,10 @@ function Dashboard() {
     navigate(`/ssb/${id}/detail`);
   };
 
+  const handleEditProfile = () => {
+    navigate('/profile/edit');
+  };
+
   if (!user) {
     return null;
   }
@@ -82,10 +86,13 @@ function Dashboard() {
         <div className="dashboard-header">
           <div className="header-info">
             <h1>Dashboard</h1>
-            <div className="user-badge">
+            <button 
+              className="user-badge" 
+              onClick={handleEditProfile}
+            >
               <span className="user-name">{user.name}</span>
               <span className="user-role">{user.role}</span>
-            </div>
+            </button>
           </div>
           <button onClick={handleLogout} className="logout-btn">
             Logout
