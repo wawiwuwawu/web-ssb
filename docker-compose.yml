@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  # Production service
+  web-ssb-prod:
+    container_name: web-ssb-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+      args:
+        # Build-time arguments dari .env file
+        - VITE_API_BASE_URL=${VITE_API_BASE_URL}
+    ports:
+      - "8180:80"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - ssb-network
+
+networks:
+  ssb-network:
+    driver: bridge

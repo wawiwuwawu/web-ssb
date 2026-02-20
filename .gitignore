@@ -8,10 +8,16 @@ pnpm-debug.log*
 lerna-debug.log*
 
 .env
+.env.local
+.env.production
+.env.*.local
 node_modules
 dist
 dist-ssr
 *.local
+
+# Docker
+docker-compose.override.yml
 
 # Editor directories and files
 .vscode/*
