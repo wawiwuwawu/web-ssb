@@ -42,6 +42,45 @@
   border-color: #ccc;
 }
 
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background-color: #2196F3;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+  background-color: #1976D2;
+  box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+}
+
+.delete-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background-color: #f44336;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+  box-shadow: 0 4px 8px rgba(244, 67, 54, 0.3);
+}
+
 .loading {
   text-align: center;
   padding: 60px 20px;
@@ -370,6 +409,7 @@
   .jadwal-detail-header {
     flex-direction: column;
     align-items: stretch;
+    gap: 10px;
   }
 
   .jadwal-detail-header h1 {
@@ -381,6 +421,16 @@
   .back-btn {
     width: 100%;
     text-align: center;
+  }
+
+  .action-buttons {
+    width: 100%;
+    order: 2;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    flex: 1;
   }
 
   .jadwal-info-header {

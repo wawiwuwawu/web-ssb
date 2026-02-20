@@ -7,6 +7,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 function SSBDetail() {
   const [ssb, setSSB] = useState(null);
   const [jadwalLatihan, setJadwalLatihan] = useState([]);
+  const [jadwalTurnamen, setJadwalTurnamen] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const { id } = useParams();
@@ -15,6 +16,7 @@ function SSBDetail() {
   useEffect(() => {
     fetchSSBDetail();
     fetchJadwalLatihan();
+    fetchJadwalTurnamen();
   }, [id]);
 
   const fetchSSBDetail = async () => {
@@ -70,6 +72,29 @@ function SSBDetail() {
       }
     } catch (err) {
       console.error('Gagal mengambil jadwal latihan:', err);
+    }
+  };
+
+  const fetchJadwalTurnamen = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) return;
+
+      const response = await fetch(`${API_BASE_URL}/ssb/${id}/jadwal-turnamen`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setJadwalTurnamen(data.data);
+      }
+    } catch (err) {
+      console.error('Gagal mengambil jadwal turnamen:', err);
     }
   };
 
@@ -249,6 +274,62 @@ function SSBDetail() {
               </div>
             )}
           </div>
+
+          {/* Jadwal Turnamen */}
+          <div className="detail-card full-width">
+            <div className="turnamen-header">
+              <h3>Jadwal Turnamen</h3>
+              <button onClick={() => navigate(`/ssb/${id}/turnamen/create`)} className="add-turnamen-btn">
+                + Tambah Turnamen
+              </button>
+            </div>
+            {jadwalTurnamen.length === 0 ? (
+              <div className="empty-turnamen">
+                <p>Belum ada jadwal turnamen. Klik tombol "Tambah Turnamen" untuk membuat jadwal baru.</p>
+              </div>
+            ) : (
+              <div className="turnamen-grid">
+                {jadwalTurnamen.map((turnamen) => (
+                  <div 
+                    key={turnamen.id} 
+                    className="turnamen-card"
+                    onClick={() => navigate(`/ssb/${id}/turnamen/${turnamen.id}`)}
+                  >
+                    <div className="turnamen-card-header">
+                      <div className="turnamen-trophy">🏆</div>
+                      <h4 className="turnamen-name">{turnamen.nama_turnamen}</h4>
+                    </div>
+                    <div className="turnamen-details">
+                      <div className="turnamen-info-row">
+                        <span className="info-icon">📅</span>
+                        <span className="info-text">
+                          {new Date(turnamen.tanggal).toLocaleDateString('id-ID', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                          })}
+                        </span>
+                      </div>
+                      <div className="turnamen-info-row">
+                        <span className="info-icon">🕒</span>
+                        <span className="info-text">
+                          {turnamen.time_start.substring(0, 5)} - {turnamen.time_end.substring(0, 5)}
+                        </span>
+                      </div>
+                      <div className="turnamen-info-row">
+                        <span className="info-icon">📍</span>
+                        <span className="info-text">{turnamen.location}</span>
+                      </div>
+                      <div className="turnamen-age-group">
+                        <span className="age-badge-turnamen">{turnamen.age_grouping}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
           {/* Daftar Siswa */}
           <div className="detail-card full-width">
             <div className="siswa-header">

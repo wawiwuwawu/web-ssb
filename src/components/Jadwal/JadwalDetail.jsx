@@ -52,6 +52,45 @@ function JadwalDetail() {
     navigate(`/ssb/${id}/detail`);
   };
 
+  const handleEdit = () => {
+    navigate(`/ssb/${id}/jadwal/${jadwalId}/edit`);
+  };
+
+  const handleDelete = async () => {
+    const confirmDelete = window.confirm(
+      `Apakah Anda yakin ingin menghapus jadwal latihan ${jadwal.day}? Tindakan ini tidak dapat dibatalkan.`
+    );
+
+    if (!confirmDelete) return;
+
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        navigate('/');
+        return;
+      }
+
+      const response = await fetch(`${API_BASE_URL}/ssb/${id}/jadwal-latihan/${jadwalId}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Navigate back to SSB detail after successful delete
+        navigate(`/ssb/${id}/detail`);
+      } else {
+        setError(data.message || 'Gagal menghapus jadwal latihan');
+      }
+    } catch (err) {
+      setError('Gagal terhubung ke server');
+    }
+  };
+
   const getPositionIcon = (position) => {
     const icons = {
       'Kiper': '🥅',
@@ -87,6 +126,10 @@ function JadwalDetail() {
         <div className="jadwal-detail-header">
           <button onClick={handleBack} className="back-btn">← Kembali</button>
           <h1>Detail Jadwal Latihan</h1>
+          <div className="action-buttons">
+            <button onClick={handleEdit} className="edit-btn">✏️ Edit</button>
+            <button onClick={handleDelete} className="delete-btn">🗑️ Hapus</button>
+          </div>
         </div>
 
         <div className="jadwal-detail-grid">

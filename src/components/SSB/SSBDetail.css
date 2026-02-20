@@ -340,6 +340,135 @@
   letter-spacing: 0.5px;
 }
 
+/* Turnamen Section */
+.turnamen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.turnamen-header h3 {
+  margin: 0;
+}
+
+.add-turnamen-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background-color: #FF9800;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-turnamen-btn:hover {
+  background-color: #F57C00;
+}
+
+.empty-turnamen {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+}
+
+.empty-turnamen p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.turnamen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 15px;
+}
+
+.turnamen-card {
+  background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.turnamen-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 152, 0, 0.4);
+}
+
+.turnamen-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.turnamen-trophy {
+  font-size: 32px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.turnamen-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  flex: 1;
+  line-height: 1.3;
+}
+
+.turnamen-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.turnamen-info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+}
+
+.info-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.info-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  flex: 1;
+}
+
+.turnamen-age-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.age-badge-turnamen {
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
 /* Siswa Header */
 .siswa-header {
   display: flex;
@@ -507,6 +636,10 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 
+  .turnamen-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
   .siswa-grid {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
@@ -546,6 +679,10 @@
   }
 
   .jadwal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .turnamen-grid {
     grid-template-columns: 1fr;
   }
 
