@@ -95,7 +95,7 @@
 .foto-label {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #1a1a1a;
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -106,7 +106,7 @@
 }
 
 .foto-label:hover {
-  background-color: #45a049;
+  background-color: #333333;
 }
 
 .foto-upload input[type="file"] {
@@ -164,7 +164,7 @@
 .form-group input[type="number"]:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #4CAF50;
+  border-color: #1a1a1a;
 }
 
 .form-group input:disabled,
@@ -187,7 +187,7 @@
 
 .save-btn {
   flex: 1;
-  background-color: #4CAF50;
+  background-color: #1a1a1a;
   color: white;
   padding: 12px 24px;
   border: none;
@@ -199,7 +199,7 @@
 }
 
 .save-btn:hover {
-  background-color: #45a049;
+  background-color: #333333;
 }
 
 .save-btn:disabled {

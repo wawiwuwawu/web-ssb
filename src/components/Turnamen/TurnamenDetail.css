@@ -1,6 +1,6 @@
 .turnamen-detail-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  background: #f5f5f5;
   padding: 2rem;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .turnamen-detail-header h1 {
-  color: #e65100;
+  color: #1a1a1a;
   font-size: 2rem;
   margin: 0;
   flex: 1;
@@ -27,7 +27,7 @@
 }
 
 .back-btn {
-  background: linear-gradient(135deg, #ff6f00 0%, #ff9800 100%);
+  background: #1a1a1a;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -36,12 +36,12 @@
   font-size: 1rem;
   font-weight: 500;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(255, 111, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .back-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 111, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .action-buttons {
@@ -61,25 +61,25 @@
 }
 
 .edit-btn {
-  background: linear-gradient(135deg, #2196F3 0%, #64B5F6 100%);
+  background: #1a1a1a;
   color: white;
-  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .edit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .delete-btn {
-  background: linear-gradient(135deg, #f44336 0%, #e57373 100%);
+  background: #666666;
   color: white;
-  box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .delete-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .turnamen-detail-grid {
@@ -104,15 +104,15 @@
 
 /* Turnamen Info Card */
 .turnamen-info-card {
-  background: linear-gradient(135deg, #fff3e0 0%, #ffffff 100%);
-  border: 2px solid #ff9800;
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+  border: 2px solid #d0d0d0;
 }
 
 .turnamen-trophy-header {
   text-align: center;
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 3px solid #ff9800;
+  border-bottom: 3px solid #d0d0d0;
 }
 
 .trophy-icon {
@@ -131,7 +131,7 @@
 }
 
 .turnamen-title {
-  color: #e65100;
+  color: #1a1a1a;
   font-size: 1.8rem;
   margin: 0;
   font-weight: 700;
@@ -148,14 +148,14 @@
   gap: 1rem;
   align-items: flex-start;
   padding: 1rem;
-  background: rgba(255, 152, 0, 0.05);
+  background: rgba(0, 0, 0, 0.02);
   border-radius: 12px;
-  border-left: 4px solid #ff9800;
+  border-left: 4px solid #1a1a1a;
   transition: all 0.3s ease;
 }
 
 .detail-row:hover {
-  background: rgba(255, 152, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
   transform: translateX(5px);
 }
 
@@ -171,7 +171,7 @@
 
 .detail-label {
   font-size: 0.875rem;
-  color: #e65100;
+  color: #666666;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -186,28 +186,28 @@
 
 .age-badge-detail {
   display: inline-block;
-  background: linear-gradient(135deg, #ff6f00 0%, #ff9800 100%);
+  background: #1a1a1a;
   color: white;
   padding: 0.5rem 1.25rem;
   border-radius: 20px;
   font-weight: 600;
   font-size: 1rem;
-  box-shadow: 0 2px 8px rgba(255, 111, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Meta Card */
 .meta-card {
-  background: linear-gradient(135deg, #ffffff 0%, #fff8f0 100%);
-  border: 2px solid #ffb74d;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  border: 2px solid #d0d0d0;
 }
 
 .meta-card h3 {
-  color: #e65100;
+  color: #1a1a1a;
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-size: 1.3rem;
   padding-bottom: 0.75rem;
-  border-bottom: 2px solid #ff9800;
+  border-bottom: 2px solid #d0d0d0;
 }
 
 .meta-info {
@@ -221,14 +221,14 @@
   flex-direction: column;
   gap: 0.5rem;
   padding: 1rem;
-  background: rgba(255, 152, 0, 0.05);
+  background: rgba(0, 0, 0, 0.02);
   border-radius: 8px;
-  border-left: 3px solid #ff9800;
+  border-left: 3px solid #1a1a1a;
 }
 
 .meta-label {
   font-size: 0.875rem;
-  color: #e65100;
+  color: #666666;
   font-weight: 600;
 }
 
@@ -250,7 +250,7 @@
 }
 
 .loading {
-  color: #ff9800;
+  color: #666666;
   font-size: 1.2rem;
   font-weight: 500;
 }

@@ -70,7 +70,7 @@
 .form-group select:focus,
 .form-group input[type="time"]:focus {
   outline: none;
-  border-color: #4CAF50;
+  border-color: #1a1a1a;
 }
 
 .form-group select:disabled,
@@ -86,7 +86,7 @@
 }
 
 .submit-btn {
-  background-color: #4CAF50;
+  background-color: #1a1a1a;
   color: white;
   padding: 12px 24px;
   border: none;
@@ -99,7 +99,7 @@
 }
 
 .submit-btn:hover {
-  background-color: #45a049;
+  background-color: #333333;
 }
 
 .submit-btn:disabled {
@@ -138,8 +138,8 @@
 }
 
 .form-group .react-time-picker__wrapper:focus-within {
-  border-color: #4CAF50;
-  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 .form-group .react-time-picker__inputGroup {

@@ -50,7 +50,7 @@
   font-size: 14px;
   font-weight: 600;
   color: white;
-  background-color: #f44336;
+  background-color: #1a1a1a;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -59,8 +59,8 @@
 }
 
 .delete-ssb-btn:hover {
-  background-color: #d32f2f;
-  box-shadow: 0 4px 8px rgba(244, 67, 54, 0.3);
+  background-color: #333333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .delete-ssb-btn:active {
@@ -217,7 +217,7 @@
   font-size: 14px;
   font-weight: 600;
   color: white;
-  background-color: #2196F3;
+  background-color: #1a1a1a;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -225,7 +225,7 @@
 }
 
 .add-jadwal-btn:hover {
-  background-color: #1976D2;
+  background-color: #333333;
 }
 
 /* Jadwal Grid */
@@ -249,17 +249,19 @@
 }
 
 .jadwal-card {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
+  border: 2px solid #d0d0d0;
 }
 
 .jadwal-card.clickable:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.35);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: #1a1a1a;
 }
 
 .jadwal-card-header {
@@ -272,9 +274,8 @@
 
 .day-badge-card {
   padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #1a1a1a;
+  border: 1px solid #333333;
   border-radius: 20px;
   font-size: 15px;
   font-weight: 700;
@@ -285,9 +286,8 @@
 
 .age-badge-card {
   padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #666666;
+  border: 1px solid #999999;
   border-radius: 20px;
   font-size: 13px;
   font-weight: 700;
@@ -300,9 +300,9 @@
   align-items: center;
   gap: 15px;
   padding: 15px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.05);
   border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .time-icon-large {
@@ -315,7 +315,7 @@
 
 .time-label {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #666666;
   margin-bottom: 4px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -324,15 +324,14 @@
 .time-value {
   font-size: 20px;
   font-weight: 700;
-  color: white;
+  color: #1a1a1a;
   font-variant-numeric: tabular-nums;
 }
 
 .age-badge {
   padding: 6px 16px;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #666666;
+  border: 1px solid #999999;
   border-radius: 20px;
   font-size: 13px;
   font-weight: 700;
@@ -357,7 +356,7 @@
   font-size: 14px;
   font-weight: 600;
   color: white;
-  background-color: #FF9800;
+  background-color: #1a1a1a;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -365,7 +364,7 @@
 }
 
 .add-turnamen-btn:hover {
-  background-color: #F57C00;
+  background-color: #333333;
 }
 
 .empty-turnamen {
@@ -388,16 +387,18 @@
 }
 
 .turnamen-card {
-  background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+  background: linear-gradient(135deg, #cccccc 0%, #e0e0e0 100%);
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  border: 2px solid #b0b0b0;
 }
 
 .turnamen-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255, 152, 0, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: #1a1a1a;
 }
 
 .turnamen-card-header {
@@ -406,7 +407,7 @@
   gap: 12px;
   margin-bottom: 16px;
   padding-bottom: 12px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
 }
 
 .turnamen-trophy {
@@ -417,7 +418,7 @@
 .turnamen-name {
   font-size: 18px;
   font-weight: 700;
-  color: white;
+  color: #1a1a1a;
   margin: 0;
   flex: 1;
   line-height: 1.3;
@@ -434,9 +435,9 @@
   align-items: center;
   gap: 10px;
   padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .info-icon {
@@ -447,7 +448,7 @@
 .info-text {
   font-size: 14px;
   font-weight: 500;
-  color: white;
+  color: #1a1a1a;
   flex: 1;
 }
 
@@ -459,9 +460,8 @@
 
 .age-badge-turnamen {
   padding: 6px 16px;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #1a1a1a;
+  border: 1px solid #333333;
   border-radius: 20px;
   font-size: 13px;
   font-weight: 700;
@@ -486,7 +486,7 @@
   font-size: 14px;
   font-weight: 600;
   color: white;
-  background-color: #4CAF50;
+  background-color: #1a1a1a;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -494,7 +494,7 @@
 }
 
 .add-siswa-btn:hover {
-  background-color: #45a049;
+  background-color: #333333;
 }
 
 .empty-siswa {
@@ -521,15 +521,15 @@
   align-items: center;
   padding: 20px;
   background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-  border: 2px solid #f0f0f0;
+  border: 2px solid #e0e0e0;
   border-radius: 12px;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .siswa-card.clickable:hover {
-  border-color: #4CAF50;
-  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+  border-color: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transform: translateY(-3px);
 }
 
@@ -564,12 +564,12 @@
 }
 
 .siswa-status-badge.active {
-  background-color: #4CAF50;
+  background-color: #1a1a1a;
   color: white;
 }
 
 .siswa-status-badge.inactive {
-  background-color: #f44336;
+  background-color: #999999;
   color: white;
 }
 
@@ -603,8 +603,8 @@
 
 .position-badge {
   padding: 5px 12px;
-  background-color: #e3f2fd;
-  color: #1976d2;
+  background-color: #e0e0e0;
+  color: #1a1a1a;
   border-radius: 12px;
   font-size: 12px;
   font-weight: 500;
