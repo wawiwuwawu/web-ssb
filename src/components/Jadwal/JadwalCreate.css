@@ -1,0 +1,306 @@
+.jadwal-create-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.jadwal-create-content {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.jadwal-create-header {
+  margin-bottom: 30px;
+}
+
+.jadwal-create-header h1 {
+  font-size: 24px;
+  color: #333;
+  margin: 15px 0 0 0;
+}
+
+.back-btn {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  transition: all 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #f9f9f9;
+  border-color: #ccc;
+}
+
+.jadwal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group select,
+.form-group input[type="time"] {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+  cursor: pointer;
+}
+
+.form-group select:focus,
+.form-group input[type="time"]:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.form-group select:disabled,
+.form-group input[type="time"]:disabled {
+  background-color: #f9f9f9;
+  cursor: not-allowed;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.submit-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.submit-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background-color: #fee;
+  color: #c33;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #fcc;
+  font-size: 14px;
+}
+
+/* React Time Picker Custom Styling */
+.form-group .react-time-picker {
+  width: 100%;
+  position: relative;
+}
+
+.form-group .react-time-picker__wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 12px;
+  transition: all 0.3s ease;
+  background: white;
+  min-height: 46px;
+}
+
+.form-group .react-time-picker__wrapper:hover {
+  border-color: #999;
+}
+
+.form-group .react-time-picker__wrapper:focus-within {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.form-group .react-time-picker__inputGroup {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 16px;
+  font-family: inherit;
+  flex-grow: 1;
+}
+
+.form-group .react-time-picker__inputGroup__input {
+  border: none !important;
+  outline: none !important;
+  padding: 6px 8px !important;
+  text-align: center;
+  transition: background-color 0.2s ease;
+  border-radius: 4px;
+  font-size: 16px;
+  min-width: 35px;
+  max-width: 45px;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.form-group .react-time-picker__inputGroup__input::-webkit-inner-spin-button,
+.form-group .react-time-picker__inputGroup__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-group .react-time-picker__inputGroup__input:hover {
+  background-color: #f0f0f0;
+}
+
+.form-group .react-time-picker__inputGroup__input:focus {
+  background-color: #e8f5e9 !important;
+}
+
+.form-group .react-time-picker__inputGroup__divider {
+  color: #666;
+  font-weight: 500;
+  padding: 0 4px;
+  font-size: 18px;
+}
+
+.form-group .react-time-picker__inputGroup__leadingZero {
+  display: none;
+}
+
+.form-group .react-time-picker__button {
+  border: none !important;
+  background: transparent !important;
+  cursor: pointer;
+  padding: 6px !important;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+}
+
+.form-group .react-time-picker__button:enabled:hover {
+  background-color: #f0f0f0 !important;
+  border-radius: 3px;
+}
+
+.form-group .react-time-picker__button svg {
+  width: 18px;
+  height: 18px;
+  stroke: #4CAF50;
+  stroke-width: 2;
+}
+
+.form-group .react-time-picker__clock {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  left: 0 !important;
+  z-index: 100 !important;
+  background: white !important;
+  border: 2px solid #4CAF50 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+  padding: 20px !important;
+  animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.form-group .react-clock {
+  width: 200px !important;
+  height: 200px !important;
+}
+
+.form-group .react-clock__face {
+  border: 3px solid #4CAF50 !important;
+  border-radius: 50% !important;
+}
+
+.form-group .react-clock__hand__body {
+  background-color: #4CAF50 !important;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-group .react-clock__mark__body {
+  background-color: #666 !important;
+}
+
+.form-group .react-clock__hand {
+  transition: all 0.15s ease-out;
+}
+
+.form-group .react-clock__mark {
+  transition: all 0.2s ease;
+}
+
+.form-group .react-clock__second-hand__body {
+  display: none;
+}
+
+/* Disabled state */
+.form-group .react-time-picker--disabled .react-time-picker__wrapper {
+  background-color: #f9f9f9;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.form-group .react-time-picker--disabled .react-time-picker__inputGroup__input {
+  cursor: not-allowed;
+  color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .jadwal-create-container {
+    padding: 10px;
+  }
+
+  .jadwal-create-content {
+    padding: 20px;
+  }
+
+  .jadwal-create-header h1 {
+    font-size: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .react-time-picker__clock {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

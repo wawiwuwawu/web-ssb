@@ -1,0 +1,398 @@
+.jadwal-detail-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.jadwal-detail-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.jadwal-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.jadwal-detail-header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.back-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a4a4a;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #f9f9f9;
+  border-color: #ccc;
+}
+
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 16px;
+  color: #666;
+}
+
+.error-message {
+  padding: 12px;
+  background-color: #fee;
+  color: #c33;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.jadwal-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.detail-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+}
+
+.detail-card.full-width {
+  grid-column: 1 / -1;
+}
+
+.detail-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 20px 0;
+}
+
+/* Jadwal Info Card */
+.jadwal-info-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.jadwal-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 10px;
+}
+
+.day-badge {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.age-badge-large {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.time-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.time-icon {
+  font-size: 40px;
+}
+
+.time-details {
+  flex: 1;
+}
+
+.time-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.time-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  font-variant-numeric: tabular-nums;
+}
+
+.jadwal-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.meta-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.meta-item:last-child {
+  border-bottom: none;
+}
+
+.meta-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.meta-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+/* Stats Card */
+.stats-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-big {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.stat-number {
+  font-size: 56px;
+  font-weight: 700;
+  color: #667eea;
+  line-height: 1;
+}
+
+.stat-text {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Siswa Header */
+.siswa-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.siswa-header h3 {
+  margin: 0;
+}
+
+.siswa-count-badge {
+  padding: 6px 14px;
+  background-color: #e8f5e9;
+  color: #4CAF50;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Siswa Grid */
+.empty-siswa {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+}
+
+.empty-siswa p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.siswa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.siswa-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+  border: 2px solid #f0f0f0;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.siswa-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  transform: translateY(-2px);
+}
+
+.siswa-foto-wrapper {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.siswa-foto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.siswa-info {
+  text-align: center;
+  width: 100%;
+}
+
+.siswa-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.siswa-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.age-badge {
+  padding: 5px 12px;
+  background-color: #e8e8e8;
+  color: #666;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.position-badge {
+  padding: 5px 12px;
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.position-icon {
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .jadwal-detail-container {
+    padding: 15px;
+  }
+
+  .jadwal-detail-header h1 {
+    font-size: 22px;
+  }
+
+  .jadwal-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .siswa-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .day-badge,
+  .age-badge-large {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .time-value {
+    font-size: 20px;
+  }
+
+  .stat-number {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 480px) {
+  .jadwal-detail-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .jadwal-detail-header h1 {
+    font-size: 20px;
+    order: -1;
+    text-align: left;
+  }
+
+  .back-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .jadwal-info-header {
+    flex-direction: column;
+  }
+
+  .siswa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .siswa-foto {
+    width: 80px;
+    height: 80px;
+  }
+}

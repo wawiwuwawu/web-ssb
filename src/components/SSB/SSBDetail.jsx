@@ -6,6 +6,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function SSBDetail() {
   const [ssb, setSSB] = useState(null);
+  const [jadwalLatihan, setJadwalLatihan] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const { id } = useParams();
@@ -13,6 +14,7 @@ function SSBDetail() {
 
   useEffect(() => {
     fetchSSBDetail();
+    fetchJadwalLatihan();
   }, [id]);
 
   const fetchSSBDetail = async () => {
@@ -48,8 +50,66 @@ function SSBDetail() {
     }
   };
 
+  const fetchJadwalLatihan = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) return;
+
+      const response = await fetch(`${API_BASE_URL}/ssb/${id}/jadwal-latihan`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setJadwalLatihan(data.data);
+      }
+    } catch (err) {
+      console.error('Gagal mengambil jadwal latihan:', err);
+    }
+  };
+
   const handleBack = () => {
     navigate('/dashboard');
+  };
+
+  const handleDelete = async () => {
+    const confirmDelete = window.confirm(
+      `Apakah Anda yakin ingin menghapus SSB "${ssb.name}"? Semua data siswa juga akan terhapus. Tindakan ini tidak dapat dibatalkan.`
+    );
+
+    if (!confirmDelete) return;
+
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        navigate('/');
+        return;
+      }
+
+      const response = await fetch(`${API_BASE_URL}/ssb/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Navigate back to dashboard after successful delete
+        navigate('/dashboard');
+      } else {
+        setError(data.message || 'Gagal menghapus SSB');
+      }
+    } catch (err) {
+      setError('Gagal terhubung ke server');
+    }
   };
 
   const getPositionIcon = (position) => {
@@ -86,8 +146,7 @@ function SSBDetail() {
       <div className="ssb-detail-content">
         <div className="ssb-detail-header">
           <button onClick={handleBack} className="back-btn">← Kembali</button>
-          <h1>{ssb.name}</h1>
-        </div>
+          <h1>{ssb.name}</h1>          <button onClick={handleDelete} className="delete-ssb-btn">🗑️ Hapus SSB</button>        </div>
 
         <div className="ssb-detail-grid">
           {/* Info Dasar */}
@@ -152,7 +211,44 @@ function SSBDetail() {
               </div>
             </div>
           </div>
-
+          {/* Jadwal Latihan */}
+          <div className="detail-card full-width">
+            <div className="jadwal-header">
+              <h3>Jadwal Latihan</h3>
+              <button onClick={() => navigate(`/ssb/${id}/jadwal/create`)} className="add-jadwal-btn">
+                + Tambah Jadwal
+              </button>
+            </div>
+            {jadwalLatihan.length === 0 ? (
+              <div className="empty-jadwal">
+                <p>Belum ada jadwal latihan. Klik tombol "Tambah Jadwal" untuk membuat jadwal baru.</p>
+              </div>
+            ) : (
+              <div className="jadwal-grid">
+                {jadwalLatihan.map((jadwal) => (
+                  <div 
+                    key={jadwal.id} 
+                    className="jadwal-card clickable"
+                    onClick={() => navigate(`/ssb/${id}/jadwal/${jadwal.id}`)}
+                  >
+                    <div className="jadwal-card-header">
+                      <div className="day-badge-card">{jadwal.day}</div>
+                      <div className="age-badge-card">{jadwal.age_grouping}</div>
+                    </div>
+                    <div className="jadwal-card-time">
+                      <div className="time-icon-large">🕒</div>
+                      <div className="time-display">
+                        <div className="time-label">Waktu Latihan</div>
+                        <div className="time-value">
+                          {jadwal.time_start.substring(0, 5)} - {jadwal.time_end.substring(0, 5)}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
           {/* Daftar Siswa */}
           <div className="detail-card full-width">
             <div className="siswa-header">
@@ -166,11 +262,11 @@ function SSBDetail() {
                 <p>Belum ada siswa terdaftar di SSB ini</p>
               </div>
             ) : (
-              <div className="siswa-list">
+              <div className="siswa-grid">
                 {ssb.siswa.map((siswa, index) => (
                   <div 
                     key={index} 
-                    className="siswa-item clickable"
+                    className="siswa-card clickable"
                     onClick={() => navigate(`/ssb/${id}/siswa/${siswa.id}`)}
                   >
                     <div className="siswa-foto-wrapper">
@@ -180,16 +276,15 @@ function SSBDetail() {
                       </div>
                     </div>
                     <div className="siswa-info">
-                      <span className="siswa-name">{siswa.name}</span>
-                      <div className="siswa-meta">
-                        <span className="siswa-age">{siswa.age} tahun</span>
-                        <span className="siswa-position">
-                          <span className="position-icon-small">{getPositionIcon(siswa.position)}</span>
+                      <h4 className="siswa-name">{siswa.name}</h4>
+                      <div className="siswa-details">
+                        <span className="age-badge">{siswa.age} tahun</span>
+                        <span className="position-badge">
+                          <span className="position-icon">{getPositionIcon(siswa.position)}</span>
                           {siswa.position}
                         </span>
                       </div>
                     </div>
-                    <span className="view-arrow">→</span>
                   </div>
                 ))}
               </div>
