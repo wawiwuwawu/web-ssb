@@ -66,7 +66,7 @@
 .form-group select {
   width: 100%;
   padding: 0.875rem 1rem;
-  border: 2px solid #ffcc80;
+  border: 2px solid #d0d0d0;
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -104,7 +104,7 @@
   gap: 1rem;
   margin-top: 2rem;
   padding-top: 1.5rem;
-  border-top: 2px solid #ffe0b2;
+  border-top: 2px solid #e0e0e0;
 }
 
 .cancel-btn,
@@ -151,8 +151,8 @@
 }
 
 .error-message {
-  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
-  color: #c62828;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  color: #c33;
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 1.5rem;
